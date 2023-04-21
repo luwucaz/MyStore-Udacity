@@ -1,0 +1,12 @@
+<h3 class="greetings">Congratulations! You made a great purchase!</h3>
+<mat-grid-list cols="3">
+    <mat-grid-tile *ngFor="let item of data">
+      <app-product-item 
+        [item]="item"
+        (onItemClickEvent)="onProductDetails($event)"
+        [showButton]="false"
+        [amount]="item.amount"
+        >
+      </app-product-item>
+    </mat-grid-tile>
+</mat-grid-list>

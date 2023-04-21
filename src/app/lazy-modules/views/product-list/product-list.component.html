@@ -1,0 +1,9 @@
+<mat-grid-list cols="3">
+  <mat-grid-tile *ngFor="let item of data">
+    <app-product-item 
+      [item]="item"
+      (onItemClickEvent)="onProductDetails($event)"
+      >
+    </app-product-item>
+  </mat-grid-tile>
+</mat-grid-list>

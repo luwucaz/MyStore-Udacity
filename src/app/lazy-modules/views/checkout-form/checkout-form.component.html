@@ -1,0 +1,35 @@
+<div >
+    <form [formGroup]="form" class="form" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill" class="input">
+            <mat-label>Email</mat-label>
+            <input 
+            matInput 
+            placeholder="pat@example.com" 
+            formControlName="email" 
+            (ngModelChange)="onEmailChange($event)" 
+            required>
+        </mat-form-field>
+        <mat-error *ngIf="!emailAvailable">{{getEmailErrorMessage()}}</mat-error>
+        <mat-form-field appearance="fill" class="input">
+            <mat-label>Name</mat-label>
+            <input 
+            matInput 
+            formControlName="name"
+            required>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input">
+            <mat-label>Address</mat-label>
+            <input 
+            matInput 
+            placeholder="50th St." 
+            formControlName="address" 
+            required>
+        </mat-form-field>
+        <button mat-raised-button color="primary" [disabled]="!isValidForm()" type="submit">Submit</button>
+    </form>
+</div>
+<mat-toolbar color="primary" class="footer">
+    <mat-toolbar-row>
+      <span><b>Total: ${{totalValue}}</b></span>
+    </mat-toolbar-row>
+</mat-toolbar>

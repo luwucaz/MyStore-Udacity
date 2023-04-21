@@ -1,0 +1,17 @@
+<mat-grid-list cols="3">
+    <mat-grid-tile *ngFor="let item of items">
+      <app-product-item 
+        [item]="item"
+        (onItemClickEvent)="onProductDetails($event)"
+        [amount]="item.amount"
+        >
+      </app-product-item>
+    </mat-grid-tile>
+</mat-grid-list>
+<mat-toolbar color="primary" class="footer">
+    <mat-toolbar-row>
+      <span><b>Total: ${{totalValue}}</b></span>
+      <span class="spacer"></span>
+      <span class="checkout-button" (click)="onCheckout()">Checkout</span>
+    </mat-toolbar-row>
+</mat-toolbar>
